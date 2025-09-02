@@ -6,7 +6,7 @@
 namespace cmbtl {
     namespace packet {
         const PacketInstructions<DAQSensorDataType::NUM_SENSORS> all_packet = createPacket<DAQSensorDataType::NUM_SENSORS>({
-            SensorIndex::MILLI_SEC, 
+            SensorIndex::MICRO_SEC, 
             SensorIndex::CLUTCH_ENGAGED,
             SensorIndex::PIT_REQUESTED,
             SensorIndex::SPEED,

@@ -10,15 +10,15 @@ using cmbtl::SensorData;
 using cmbtl::packet::PacketInstructions;
 using cmbtl::packet::createPacket;
 
-using SensorsTuple = std::tuple<cmbtl::millisec::MILLI_SEC_SENSOR_INFO>;
+using SensorsTuple = std::tuple<cmbtl::microsec::MICRO_SEC_SENSOR_INFO>;
 using SensorDataType = SensorData<SensorsTuple>; 
 TEST(SensorDataPacketTests, decodePacket) {
     SensorDataType sensorData;
     PacketInstructions<SensorDataType::NUM_SENSORS> instructions;
     instructions.set(0);
 
-    BinaryBuffer buffer(cmbtl::millisec::MILLI_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
-    buffer.writeValue<cmbtl::millisec::MILLI_SEC_SENSOR_INFO::STORED_VALUE>(451, cmbtl::millisec::MILLI_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
+    BinaryBuffer buffer(cmbtl::microsec::MICRO_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
+    buffer.writeValue<cmbtl::microsec::MICRO_SEC_SENSOR_INFO::STORED_VALUE>(451, cmbtl::microsec::MICRO_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
 
     sensorData.decodePacket(instructions, buffer);
 
@@ -33,7 +33,7 @@ TEST(SensorDataPacketTests, encodePacket) {
 
     BinaryBuffer buffer = sensorData.encodePacket(instructions);
     
-    cmbtl::millisec::MILLI_SEC_SENSOR_INFO::STORED_VALUE actual = buffer.readValue<cmbtl::millisec::MILLI_SEC_SENSOR_INFO::STORED_VALUE>(cmbtl::millisec::MILLI_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
+    cmbtl::microsec::MICRO_SEC_SENSOR_INFO::STORED_VALUE actual = buffer.readValue<cmbtl::microsec::MICRO_SEC_SENSOR_INFO::STORED_VALUE>(cmbtl::microsec::MICRO_SEC_SENSOR_INFO::ENCODED_BIT_SIZE);
     ASSERT_EQ(actual, 427);
 
     instructions.set(0, false);

@@ -6,7 +6,7 @@
 #include <tuple>
 
 #include "Sensors/sec.h"
-#include "Sensors/millisec.h"
+#include "Sensors/microsec.h"
 #include "Sensors/clutch_engaged.h"
 #include "Sensors/pit_requested.h"
 #include "Sensors/speed.h"
@@ -23,7 +23,7 @@ namespace cmbtl {
     //--------------- Define Sensor Indexes ----------------------------------------------------
     enum SensorIndex {
         SEC,
-        MILLI_SEC,
+        MICRO_SEC,
         CLUTCH_ENGAGED,
         PIT_REQUESTED,
         SPEED,
@@ -42,7 +42,7 @@ namespace cmbtl {
     // The order that the sensor appear in the enum and this tuple MUST MUST BE THE SAME
     using SensorInfoTuple = std::tuple<
     cmbtl::sec::SEC_SENSOR_INFO,
-    cmbtl::millisec::MILLI_SEC_SENSOR_INFO,
+    cmbtl::microsec::MICRO_SEC_SENSOR_INFO,
     cmbtl::clutch_engaged::CLUTCH_ENGAGED_SENSOR_INFO,
     cmbtl::pit_requested::PIT_REQUESTED_SENSOR_INFO,
     cmbtl::speed::SPEED_SENSOR_INFO,
