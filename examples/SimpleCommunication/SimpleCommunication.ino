@@ -1,7 +1,7 @@
 #include <SensorData.h>
-#include <DAQInfrastructure/DAQSensors.h>
+#include <DAQSensors.h>
 #include <BinaryBuffer.h>
-#include <DAQInfrastructure/DAQPackets.h> 
+#include <DAQPackets.h> 
 
 int currentTime = 0;
 void setup() {
