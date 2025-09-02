@@ -18,7 +18,7 @@ namespace cmbtl {
 		using RV = uint64_t;
 
 		inline void serializeToJSON(const RV& convertedVal, std::stringstream& ss) {
-			ss << "\"millisec\": " << convertedVal;
+			ss << "\"microsec\": " << convertedVal;
 		}
 
 		//The millisec sensor
