@@ -1,8 +1,8 @@
 #ifndef CMBTL_DAQ_SENSORS_H
 #define CMBTL_DAQ_SENSORS_H
 
-#include "../SensorInfo.h"
-#include "../SensorData.h"
+#include "SensorInfo.h"
+#include "SensorData.h"
 #include <tuple>
 
 #include "Sensors/millisec.h"

@@ -1,8 +1,8 @@
 #ifndef CMBTL_DAQ_PACKETS_H
 #define CMBTL_DAQ_PACKETS_H
 #include "Packets/All_Packet.h"
-#include "../Packets/PacketIDMap.h"
-#include "../Packets/PacketScheme.h"
+#include "Packets/PacketIDMap.h"
+#include "Packets/PacketScheme.h"
 #include "DAQSensors.h"
 
 namespace cmbtl {
