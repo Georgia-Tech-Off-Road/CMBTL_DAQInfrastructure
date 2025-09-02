@@ -5,6 +5,7 @@
 #include "SensorData.h"
 #include <tuple>
 
+#include "Sensors/sec.h"
 #include "Sensors/millisec.h"
 #include "Sensors/clutch_engaged.h"
 #include "Sensors/pit_requested.h"
@@ -21,6 +22,7 @@ using std::array;
 namespace cmbtl {
     //--------------- Define Sensor Indexes ----------------------------------------------------
     enum SensorIndex {
+        SEC,
         MILLI_SEC,
         CLUTCH_ENGAGED,
         PIT_REQUESTED,
@@ -39,6 +41,7 @@ namespace cmbtl {
 
     // The order that the sensor appear in the enum and this tuple MUST MUST BE THE SAME
     using SensorInfoTuple = std::tuple<
+    cmbtl::sec::SEC_SENSOR_INFO,
     cmbtl::millisec::MILLI_SEC_SENSOR_INFO,
     cmbtl::clutch_engaged::CLUTCH_ENGAGED_SENSOR_INFO,
     cmbtl::pit_requested::PIT_REQUESTED_SENSOR_INFO,
