@@ -1,5 +1,5 @@
-#include "../../Packets/PacketInstructions.h"
-#include "../../Packets/PacketInstructionsBuilder.h"
+#include "Packets/PacketInstructions.h"
+#include "Packets/PacketInstructionsBuilder.h"
 #include "../DAQSensors.h"
 #ifndef CMBTL_ALL__PACKET_H
 #define CMBTL_ALL__PACKET_H
