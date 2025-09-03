@@ -14,7 +14,7 @@ namespace cmbtl {
         using RV = uint16_t;
 
         inline void serializeToJSON(const RV& convertedVal, std::stringstream& ss) {
-            ss << "\"CVTTemp: \"" << convertedVal;
+            ss << "\"CVTTemp\": " << convertedVal;
         }
 
         using CVT_TEMP_SENSOR_INFO = DefaultSensor<SV, RV, ENCODED_BIT_SIZE, serializeToJSON>;
