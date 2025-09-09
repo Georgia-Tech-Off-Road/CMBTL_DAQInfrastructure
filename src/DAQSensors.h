@@ -7,16 +7,8 @@
 
 #include "Sensors/sec.h"
 #include "Sensors/microsec.h"
-#include "Sensors/clutch_engaged.h"
-#include "Sensors/pit_requested.h"
-#include "Sensors/speed.h"
-#include "Sensors/position.h"
-#include "Sensors/brake_pressure.h"
-#include "Sensors/RPM.h"
-#include "Sensors/linear_acceleration.h"
-#include "Sensors/CVT_temp.h"
-#include "Sensors/brake_temp.h"
-#include "Sensors/steering_rotation.h"
+
+#include "Sensors/RPM_Sensor.h"
 
 using std::array;
 namespace cmbtl {
@@ -24,35 +16,32 @@ namespace cmbtl {
     enum SensorIndex {
         SEC,
         MICRO_SEC,
-        CLUTCH_ENGAGED,
-        PIT_REQUESTED,
-        SPEED,
-        POSITION,
-        BRAKE_PRESSURE,
-        RPM,
-        LINEAR_ACCELERATION,
-        CVT_TEMP,
-        BRAKE_TEMP,
-        STEERING_ROTATION,
-        //COUNT IS NOT A REAL SENSOR, it is used to determine how many elements are in this enum
-        //COUNT SHOULD ALWAYS BE THE LAST ELEMENT
-        COUNT,
+        RPM1,
+        RPM2,
+        RPM3,
+        RPM4
     };
+
+    std::string RPM1GetName() { return "rpm1";}
+    std::string RPM2GetName() { return "rpm2";}
+    std::string RPM3GetName() { return "rpm3";}
+    std::string RPM4GetName() { return "rpm4";}
+
+    // Define RPM Sensors
+    using RPM1_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM1GetName>;
+    using RPM2_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM2GetName>;
+    using RPM3_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM3GetName>;
+    using RPM4_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM4GetName>;
 
     // The order that the sensor appear in the enum and this tuple MUST MUST BE THE SAME
     using SensorInfoTuple = std::tuple<
     cmbtl::sec::SEC_SENSOR_INFO,
     cmbtl::microsec::MICRO_SEC_SENSOR_INFO,
-    cmbtl::clutch_engaged::CLUTCH_ENGAGED_SENSOR_INFO,
-    cmbtl::pit_requested::PIT_REQUESTED_SENSOR_INFO,
-    cmbtl::speed::SPEED_SENSOR_INFO,
-    cmbtl::position::POSITION_SENSOR_INFO,
-    cmbtl::brake_pressure::BRAKE_PRESSURE_SENSOR_INFO,
-    cmbtl::rpm::RPM_SENSOR_INFO,
-    cmbtl::linear_acceleration::LINEAR_ACCELERATION_SENSOR_INFO,
-    cmbtl::cvt_temp::CVT_TEMP_SENSOR_INFO,
-    cmbtl::brake_temp::BRAKE_TEMP_SENSOR_INFO,
-    cmbtl::steering_rotation::STEERING_ROTATION_SENSOR_INFO>;
+    RPM1_SENSOR_INFO,
+    RPM2_SENSOR_INFO,
+    RPM3_SENSOR_INFO,
+    RPM4_SENSOR_INFO
+    >;
 
     using DAQSensorDataType = SensorData<SensorInfoTuple>;
 
