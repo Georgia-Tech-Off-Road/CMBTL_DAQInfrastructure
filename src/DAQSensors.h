@@ -11,6 +11,8 @@
 #include "Sensors/RPM_Sensor.h"
 #include "Sensors/Analog_Sensor.h"
 
+#include "Sensors/teensy_temp.h"
+
 using std::array;
 namespace cmbtl {
     //--------------- Define Sensor Indexes ----------------------------------------------------
@@ -24,7 +26,8 @@ namespace cmbtl {
         Analog1,
         Analog2,
         Analog3,
-        Analog4
+        Analog4,
+        TEENSY_TEMP
     };
 
     // Define RPM Sensors
@@ -61,7 +64,8 @@ namespace cmbtl {
     ANALOG1_SENSOR_INFO,
     ANALOG2_SENSOR_INFO,
     ANALOG3_SENSOR_INFO,
-    ANALOG4_SENSOR_INFO
+    ANALOG4_SENSOR_INFO,
+    cmbtl::teensy_temp::TEENSY_TEMP_SENSOR_INFO
     >;
 
     using DAQSensorDataType = SensorData<SensorInfoTuple>;

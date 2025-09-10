@@ -16,6 +16,7 @@ namespace cmbtl {
             SensorIndex::Analog2,
             SensorIndex::Analog3,
             SensorIndex::Analog4,
+            SensorIndex::TEENSY_TEMP
         });
     }
 }
