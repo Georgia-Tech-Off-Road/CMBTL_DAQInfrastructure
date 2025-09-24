@@ -12,8 +12,8 @@ namespace cmbtl {
             SensorIndex::RPM2,
             SensorIndex::RPM3,
             SensorIndex::RPM4,
-            SensorIndex::Analog1,
-            SensorIndex::Analog2,
+            SensorIndex::BrakePressure,
+            SensorIndex::LDS,
             SensorIndex::Analog3,
             SensorIndex::Analog4,
             SensorIndex::TEENSY_TEMP
