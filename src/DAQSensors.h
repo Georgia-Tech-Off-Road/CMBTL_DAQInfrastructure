@@ -10,6 +10,7 @@
 
 #include "Sensors/RPM_Sensor.h"
 #include "Sensors/Analog_Sensor.h"
+#include "Sensors/Linear_Analog_Sensor.h"
 
 #include "Sensors/teensy_temp.h"
 
@@ -23,8 +24,8 @@ namespace cmbtl {
         RPM2,
         RPM3,
         RPM4,
-        Analog1,
-        Analog2,
+        BrakePressure,
+        LDS,
         Analog3,
         Analog4,
         TEENSY_TEMP
@@ -42,13 +43,13 @@ namespace cmbtl {
     using RPM4_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM4GetName>;
 
     // Define Analog Sensors
-    std::string Analog1GetName() { return "analog1"; }
-    std::string Analog2GetName() { return "analog2"; }
+    std::string BrakePressureGetName() { return "BrakePressure"; }
+    std::string LDSGetName() { return "LDS"; }
     std::string Analog3GetName() { return "analog3"; }
     std::string Analog4GetName() { return "analog4"; }
 
-    using ANALOG1_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog1GetName>;
-    using ANALOG2_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog2GetName>;
+    using BrakePressure_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<BrakePressureGetName>;
+    using LDS_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<LDSGetName>;
     using ANALOG3_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog3GetName>;
     using ANALOG4_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog4GetName>;
     
@@ -61,8 +62,8 @@ namespace cmbtl {
     RPM2_SENSOR_INFO,
     RPM3_SENSOR_INFO,
     RPM4_SENSOR_INFO,
-    ANALOG1_SENSOR_INFO,
-    ANALOG2_SENSOR_INFO,
+    BrakePressure_SENSOR_INFO,
+    LDS_SENSOR_INFO,
     ANALOG3_SENSOR_INFO,
     ANALOG4_SENSOR_INFO,
     cmbtl::teensy_temp::TEENSY_TEMP_SENSOR_INFO
