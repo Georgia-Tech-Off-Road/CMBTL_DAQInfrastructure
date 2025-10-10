@@ -7,7 +7,7 @@
 #include <iostream>
 
 TEST(DAQTestJSONSerializationTest, DAQTestSerializeToJSON) {
-    cmbtl::test::DAQSensorTestDataType testSensorData;
+    cmbtl::test::DAQTestSensorDataType testSensorData;
     std::cout << std::endl;
     std::cout << testSensorData.serializeDataToJSON();
     std::cout << std::endl;

@@ -31,6 +31,8 @@ namespace cmbtl {
             LDS3,
             LDS4,
             CVT_TEMP,
+            Analog1,
+            Analog2,
             Analog3,
             Analog4,
             TEENSY_TEMP
@@ -57,6 +59,8 @@ namespace cmbtl {
 
         std::string CVTTempGetName() {return "cvt_temp"; }
 
+        std::string Analog1GetName() { return "analog1"; }
+        std::string Analog2GetName() { return "analog2"; }
         std::string Analog3GetName() { return "analog3"; }
         std::string Analog4GetName() { return "analog4"; }
 
@@ -69,6 +73,8 @@ namespace cmbtl {
 
         using CVT_TEMP_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<CVTTempGetName>;
 
+        using ANALOG1_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog1GetName>;
+        using ANALOG2_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog2GetName>;        
         using ANALOG3_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog3GetName>;
         using ANALOG4_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog4GetName>;
         
@@ -87,12 +93,14 @@ namespace cmbtl {
         LDS3_SENSOR_INFO,
         LDS4_SENSOR_INFO,
         CVT_TEMP_SENSOR_INFO,
+        ANALOG1_SENSOR_INFO,
+        ANALOG2_SENSOR_INFO,
         ANALOG3_SENSOR_INFO,
         ANALOG4_SENSOR_INFO,
         cmbtl::teensy_temp::TEENSY_TEMP_SENSOR_INFO
         >;
 
-        using DAQSensorTestDataType = SensorData<SensorInfoTuple>;
+        using DAQTestSensorDataType = SensorData<SensorInfoTuple>;
 
     }
 }
