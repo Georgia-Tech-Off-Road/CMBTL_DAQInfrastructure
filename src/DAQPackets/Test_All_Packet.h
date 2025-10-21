@@ -1,0 +1,25 @@
+#include "Packets/PacketInstructions.h"
+#include "Packets/PacketInstructionsBuilder.h"
+#include "../DAQTestSensors.h"
+#ifndef CMBTL_TEST_ALL__PACKET_H
+#define CMBTL_TEST_ALL__PACKET_H
+namespace cmbtl {
+    namespace test {
+        namespace packet {
+            const cmbtl::packet::PacketInstructions<cmbtl::test::DAQTestSensorDataType::NUM_SENSORS> all_packet = createPacket<cmbtl::test::DAQSensorDataType::NUM_SENSORS>({
+                SensorIndex::SEC,
+                SensorIndex::MICRO_SEC,
+                SensorIndex::RPM1,
+                SensorIndex::RPM2,
+                SensorIndex::RPM3,
+                SensorIndex::RPM4,
+                SensorIndex::BrakePressure,
+                SensorIndex::LDS,
+                SensorIndex::Analog3,
+                SensorIndex::Analog4,
+                SensorIndex::TEENSY_TEMP
+            });
+        }
+    }
+}
+#endif
