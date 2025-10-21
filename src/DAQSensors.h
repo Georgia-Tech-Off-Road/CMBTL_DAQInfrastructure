@@ -24,10 +24,10 @@ namespace cmbtl {
         RPM2,
         RPM3,
         RPM4,
-        BrakePressure,
-        LDS,
-        Analog3,
-        Analog4,
+        RearBrakePressure,
+        FrontBrakePressure,
+        BackupBrakePressureOne,
+        BackupBrakePressureTwo,
         TEENSY_TEMP
     };
 
@@ -43,15 +43,15 @@ namespace cmbtl {
     using RPM4_SENSOR_INFO = cmbtl::rpm_sensor::RPM_SENSOR<RPM4GetName>;
 
     // Define Analog Sensors
-    std::string BrakePressureGetName() { return "BrakePressure"; }
-    std::string LDSGetName() { return "LDS"; }
-    std::string Analog3GetName() { return "analog3"; }
-    std::string Analog4GetName() { return "analog4"; }
+    std::string RearBrakePressureGetName() { return "RearBrakePressure"; }
+    std::string FrontBrakePressureGetName() { return "FrontBreakPressure"; }
+    std::string BackupBrakePressureOneGetName() { return "BackupBrakePressureOne"; }
+    std::string BackupBrakePressureTwoGetName() { return "BackupBrakePressureTwo"; }
 
-    using BrakePressure_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<BrakePressureGetName>;
-    using LDS_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<LDSGetName>;
-    using ANALOG3_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog3GetName>;
-    using ANALOG4_SENSOR_INFO = cmbtl::analog_sensor::ANALOG_SENSOR<Analog4GetName>;
+    using RearBrakePressure_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<RearBrakePressureGetName>;
+    using FrontBrakePressur_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<FrontBrakePressureGetName>;
+    using BackupBrakePressureOne_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<BackupBrakePressureOneGetName>;
+    using BackupBrakePressureTwo_SENSOR_INFO = cmbtl::linear_analog_sensor::Linear_Analog_Sensor<BackupBrakePressureTwoGetName>;
     
 
     // The order that the sensor appear in the enum and this tuple MUST MUST BE THE SAME
@@ -62,10 +62,10 @@ namespace cmbtl {
     RPM2_SENSOR_INFO,
     RPM3_SENSOR_INFO,
     RPM4_SENSOR_INFO,
-    BrakePressure_SENSOR_INFO,
-    LDS_SENSOR_INFO,
-    ANALOG3_SENSOR_INFO,
-    ANALOG4_SENSOR_INFO,
+    RearBrakePressure_SENSOR_INFO,
+    FrontBrakePressur_SENSOR_INFO,
+    BackupBrakePressureOne_SENSOR_INFO,
+    BackupBrakePressureTwo_SENSOR_INFO,
     cmbtl::teensy_temp::TEENSY_TEMP_SENSOR_INFO
     >;
 
